@@ -1,0 +1,64 @@
+{
+  "name": "vfes-validator",
+  "version": "1.0.0",
+  "description": "From Validator with 0 dependences",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --config=jest.config.js",
+    "test-no-watch": "jest --config=jest.config.js",
+    "eslint": "eslint \"**/*.js\" --fix",
+    "validate": "npm-run-all --parallel eslint test-no-watch",
+    "precommit": "npm run eslint",
+    "prepush": "npm run validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/area73/vfes-validator.git"
+  },
+  "keywords": [
+    "seed"
+  ],
+  "author": "Rodrigo Erades <rerades@siete3.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/area73/vfes-validator/issues"
+  },
+  "homepage": "https://github.com/area73/vfes-validator#readme",
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "Explorer 11",
+    "last 2 Edge versions"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "jest-canvas-mock": "^2.1.0",
+    "jest-extended": "^0.11.2",
+    "jest-junit": "^7.0.0",
+    "jest-snapshot": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-stream": "^5.2.1"
+  }
+}
