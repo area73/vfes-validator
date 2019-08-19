@@ -5,16 +5,16 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
   output: {
     path: path.resolve('./dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './src',
     overlay: true,
-    disableHostCheck: true
+    disableHostCheck: true,
   },
   stats: {
-    colors: true
+    colors: true,
   },
   module: {
     rules: [
@@ -30,7 +30,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'NEW SEED',
-      template: './src/index.html'
-    })
+      template: './src/index.html',
+    }),
   ],
 };

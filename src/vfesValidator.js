@@ -1,12 +1,10 @@
+import { fromEvent } from 'rxjs';
 import * as defaultRules from './rules/index.js';
 import messages from './messages/index.js';
-import { fromEvent } from 'rxjs';
-
-
 
 export const vfesValidator = function vfesValidator(formulary) {
   formulary.addEventListener('submit', vfesValidator.onSubmitEv);
-  fromEvent(formulary, 'submit').subscribe((ev) => console.warn(ev));
+  fromEvent(formulary, 'submit').subscribe(ev => console.warn(ev));
   return {
     addRulesToFieldNames: vfesValidator.addRulesToFieldNames,
     addMsgToFieldNames: vfesValidator.addMsgToFieldNames,

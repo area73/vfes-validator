@@ -1,6 +1,6 @@
-import { vfesValidator } from './vfesValidator.js'
+import { vfesValidator } from './vfesValidator.js';
 
-const rules =  {
+const rules = {
   testfield: {
     minlength: 2,
     required: true,
@@ -15,5 +15,4 @@ const rules =  {
   },
 };
 
-window.validator = vfesValidator(document.querySelector('[data-vfes-form]'))
-  .addRulesToFieldNames(rules);
+window.validator = vfesValidator(document.querySelector('[data-vfes-form]')).addRulesToFieldNames(rules);
