@@ -1,9 +1,12 @@
 import * as defaultRules from './rules/index.js';
 import messages from './messages/index.js';
+import { fromEvent } from 'rxjs';
+
+
 
 export const vfesValidator = function vfesValidator(formulary) {
   formulary.addEventListener('submit', vfesValidator.onSubmitEv);
-
+  fromEvent(formulary, 'submit').subscribe((ev) => console.warn(ev));
   return {
     addRulesToFieldNames: vfesValidator.addRulesToFieldNames,
     addMsgToFieldNames: vfesValidator.addMsgToFieldNames,
@@ -31,11 +34,11 @@ vfesValidator.addRule = function addRule(ruleFn) {
 };
 
 vfesValidator.addMessage = function addMessage(ruleName, msg) {
-  return { ...this, messages:{ ...this.messages, [ruleName]: msg } };
+  return { ...this, messages: { ...this.messages, [ruleName]: msg } };
 };
 
 vfesValidator.addRulesToFieldNames = function addRulesToFieldNames(config) {
-  return { ...this, matchingRules: { ...this.matchingRules, ...config }};
+  return { ...this, matchingRules: { ...this.matchingRules, ...config } };
 };
 
 vfesValidator.addMsgToFieldNames = function addMsgToFieldNames(config) {
