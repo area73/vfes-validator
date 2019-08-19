@@ -1,6 +1,5 @@
 import { vfesValidator } from '../src/vfesValidator';
 
-
 document.body.innerHTML = `
   <h1>VFES Validation Test</h1>
 

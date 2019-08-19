@@ -31,18 +31,15 @@ vfesValidator.addRule = function addRule(ruleFn) {
 };
 
 vfesValidator.addMessage = function addMessage(ruleName, msg) {
-  const newMsg = { ...this.messages, [ruleName]: msg };
-  return { ...this, newMsg };
+  return { ...this, messages:{ ...this.messages, [ruleName]: msg } };
 };
 
 vfesValidator.addRulesToFieldNames = function addRulesToFieldNames(config) {
-  const matchingRules = { ...this.matchingRules, ...config };
-  return { ...this, matchingRules };
+  return { ...this, matchingRules: { ...this.matchingRules, ...config }};
 };
 
 vfesValidator.addMsgToFieldNames = function addMsgToFieldNames(config) {
-  const matchingMessages = { ...this.matchingMessages, ...config };
-  return { ...this, matchingMessages };
+  return { ...this, matchingMessages: { ...this.matchingMessages, ...config } };
 };
 
 vfesValidator.addListener = (/* listener */) => {
