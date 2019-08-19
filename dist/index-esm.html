@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>VFES Validation Test</title>
+  </head>
+  <body>
+    <h1>VFES Validation Test</h1>
+
+    <div>
+      <form action="/test" method="POST" data-vfes-form>
+        <div>
+          <input name="testfield" placeholder="Name" />
+          <span data-vfes-error-field="testfield"></span>
+        </div>
+        <div>
+          <input name="cp" placeholder="28410" />
+          <span data-vfes-error-field="cp"></span>
+        </div>
+        <div>
+          <input name="userEmail" placeholder="user@email.com" />
+          <span data-vfes-error-field="userEmail"></span>
+        </div>
+        <div>
+          <textarea name="test" placeholder="The value should be equal to 'vervatim."></textarea>
+          <span data-vfes-error-field="test"></span>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+  </body>
+
+  <script type="module">
+        import { vfesValidator } from '../src/vfesValidator.js'
+
+        const rules =  {
+            testfield: {
+                minlength: 2,
+                required: true,
+            },
+            /*
+            cp:{
+
+            },
+             */
+            userEmail: {
+                email: true,
+            },
+        };
+
+        window.validator = vfesValidator(document.querySelector('[data-vfes-form]'))
+            .addRulesToFieldNames(rules);
+
+  </script>
+</html>
